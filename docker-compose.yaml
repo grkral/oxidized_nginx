@@ -1,0 +1,17 @@
+version: '3'
+services: 
+  oxidized:
+    image: myimage/oxidized:1.0
+    restart: unless-stopped
+    volumes: 
+      - ./oxidized_conf/:/root/.config/oxidized/
+
+  nginx:
+    image: nginx:1.19.2
+    restart: unless-stopped
+    ports: 
+      - "8008:8008"
+    volumes:
+      - ./nginx_conf/:/etc/nginx/
+    links:
+        - oxidized
