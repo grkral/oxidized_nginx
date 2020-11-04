@@ -1,12 +1,14 @@
 # oxidized_nginx
-Simple run oxidized with nginx reverse proxy for authentication in docker for collect backup RouterOS (Mikrotik)
+Simple run oxidized with nginx self signed certificate and reverse proxy for authentication in docker for collect backup RouterOS (MikroTik)
 
+Default address  
+``https://localhost:8888``  
 
 Edit for authentication:  
-1) MyLogin  
-2) MyPassWord  
+1) Username  
+2) Password  
 in  
-``start_pwd_gen.sh``
+``preparing.sh``
 
 Edit devices list ``./oxidized_conf/mikrotik/router.db``
 ``DeviceForTest:routeros:10.174.254.71:22:MyLogin:MyPassW0rD``  
@@ -20,6 +22,5 @@ Where is:
 
 
 and run  
-1) ``start_pwd_gen.sh``  
-2) ``preparing.sh``  
+1) ``preparing.sh``  
 3) ``start.sh``  

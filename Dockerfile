@@ -1,8 +1,4 @@
-FROM ubuntu
+ARG BASEIMAGE=alpine:3.12
+FROM ${BASEIMAGE}
 
-RUN apt-get -yq update \
-    && apt-get -yq --no-install-recommends install whois \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-ENTRYPOINT ["echo"]
+RUN apk add --no-cache apache2-utils
