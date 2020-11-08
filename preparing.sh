@@ -12,8 +12,6 @@ docker run --rm htpasswd:0.1 htpasswd -nb $Username $Password > ./nginx_conf/.ht
 
 #make you own image with tag.
 docker pull oxidized/oxidized:latest
-docker run --name ChangeImageTag -d oxidized/oxidized:latest
-docker commit ChangeImageTag myimage/oxidized:1.0
-docker rm -f ChangeImageTag
+docker tag oxidized/oxidized myimage/oxidized:1.0
 
 
